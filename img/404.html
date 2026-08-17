@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      color: #fff;
+
+      background:
+        radial-gradient(circle at 20% 20%, #7c3aed55, transparent 35%),
+        radial-gradient(circle at 80% 80%, #06b6d455, transparent 35%),
+        linear-gradient(135deg, #0f172a, #111827, #020617);
+    }
+
+    .error-container {
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
+      padding: 60px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .error-code {
+      font-size: clamp(100px, 20vw, 190px);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -10px;
+
+      background: linear-gradient(
+        135deg,
+        #a78bfa,
+        #22d3ee,
+        #38bdf8
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .title {
+      margin-top: 25px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+    }
+
+    .description {
+      max-width: 550px;
+      margin: 15px auto 0;
+      color: #cbd5e1;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-secondary {
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .search-box {
+      max-width: 480px;
+      margin: 30px auto 0;
+      display: flex;
+      padding: 5px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-box input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: white;
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+
+    .search-box input::placeholder {
+      color: #94a3b8;
+    }
+
+    .search-box button {
+      border: 0;
+      cursor: pointer;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      background: #2563eb;
+      transition: 0.2s;
+    }
+
+    .search-box button:hover {
+      background: #1d4ed8;
+    }
+
+    .footer-text {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .error-container {
+        padding: 45px 20px;
+        border-radius: 22px;
+      }
+
+      .error-code {
+        letter-spacing: -5px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-box {
+        display: flex;
+      }
+
+      .search-box button {
+        padding: 11px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="error-container">
+
+    <div class="error-code">404</div>
+
+    <h1 class="title">Page Not Found</h1>
+
+    <p class="description">
+      Oops! The page you're looking for doesn't exist or may have been
+      moved to another location.
+    </p>
+
+    <div class="buttons">
+      <a href="/" class="btn btn-primary">
+        🏠 Go Home
+      </a>
+
+      <a href="javascript:history.back()" class="btn btn-secondary">
+        ← Go Back
+      </a>
+    </div>
+
+    <form class="search-box" onsubmit="searchPage(event)">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="What are you looking for?"
+        autocomplete="off"
+      />
+
+      <button type="submit">
+        Search
+      </button>
+    </form>
+
+    <p class="footer-text">
+      Error Code: 404 • The requested page could not be found.
+    </p>
+
+  </main>
+
+  <script>
+    function searchPage(event) {
+      event.preventDefault();
+
+      const input = document.getElementById("searchInput");
+      const query = input.value.trim();
+
+      if (!query) {
+        input.focus();
+        return;
+      }
+
+      // Apni search URL yahan set kar sakte ho
+      window.location.href =
+        "/search?q=" + encodeURIComponent(query);
+    }
+  </script>
+
+</body>
+</html>
